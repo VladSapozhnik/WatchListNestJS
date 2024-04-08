@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Watchlist } from './entities/watchlist.entity';
+import { createAssetResponse } from './response';
 
 @Injectable()
 export class WatchlistService {
@@ -8,7 +9,7 @@ export class WatchlistService {
     @InjectModel(Watchlist)
     private readonly watchlistRepository: typeof Watchlist,
   ) {}
-  async createAsset(user, dto) {
+  async createAsset(user, dto): Promise<createAssetResponse> {
     const watchlist = {
       user: user.id,
       name: dto.name,
