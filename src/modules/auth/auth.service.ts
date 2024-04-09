@@ -1,8 +1,8 @@
 import { TokenService } from './../token/token.service';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { AppError } from 'src/common/constants/errors';
-import { CreateUserDto } from 'src/user/dto/create-user.dto';
-import { UserService } from 'src/user/user.service';
+import { CreateUserDto } from 'src/modules/user/dto/create-user.dto';
+import { UserService } from 'src/modules/user/user.service';
 import { UserLoginDto } from './dto';
 import * as bgcrypt from 'bcrypt';
 import { AuthUserResponse } from './response';

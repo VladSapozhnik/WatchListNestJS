@@ -2,6 +2,7 @@ import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import { CreateFriendDto } from './dto/create-friend.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { IUser } from './interfaces/user.interface';
 
 @Controller()
 export class AppController {
@@ -18,7 +19,7 @@ export class AppController {
   }
   @ApiTags('API friends')
   @Get('friends/:id')
-  getUser(@Param('id') id: string) {
+  getUser(@Param('id') id: string): IUser {
     return this.appService.getUser(+id);
   }
   @ApiTags('API friends')

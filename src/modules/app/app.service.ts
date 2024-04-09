@@ -21,7 +21,7 @@ export class AppService {
   getUsers() {
     return this.userArray;
   }
-  getUser(id: number) {
+  getUser(id: number): IUser {
     return this.userArray.find((item) => item.id === id);
   }
   createUser(createFriendDto: CreateFriendDto) {

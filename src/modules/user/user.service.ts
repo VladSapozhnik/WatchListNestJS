@@ -5,7 +5,7 @@ import { InjectModel } from '@nestjs/sequelize';
 import { User } from './entities/user.entity';
 import * as bcrypt from 'bcrypt';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { Watchlist } from 'src/watchlist/entities/watchlist.entity';
+import { Watchlist } from 'src/modules/watchlist/entities/watchlist.entity';
 
 @Injectable()
 export class UserService {
